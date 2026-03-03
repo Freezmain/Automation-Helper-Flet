@@ -1,12 +1,15 @@
 import flet as ft
-from router import Router
-from dotenv import load_dotenv
 
-load_dotenv()
+from router import *
+from utils.style import *
 
-async def main(page: ft.Page):
-    Router(page)
-    page.update()
+def main(page: ft.Page):
+    page.title = "SVIT Helper"
+    page.theme_mode = ft.ThemeMode.DARK
+    page.bgcolor = pageBgColor
+    page.height = pageHeight
+    page.width = pageWidth
 
-if __name__ == "__main__":
-    ft.app(target=main, assets_dir="assets")
+    Router(page).start_routing()
+
+ft.run(main)

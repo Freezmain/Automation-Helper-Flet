@@ -1,8 +1,13 @@
 import flet as ft
 
-PageBgColor: str = '#2C3440'
+pageBgColor: str = "#2C3440"
+navBarBgColor: str = "#373E49"
+
 pageWidth: int = 720
+navBarWidth: int = 200
+
 pageHeight: int = 1280
+navBarHeight: int = 1280
 
 pageFont: dict = {
 
@@ -20,7 +25,16 @@ TextSubTitle_style: dict = {
     'weight': ft.FontWeight.W_400
 }
 
-Button_white: dict = {
-    'color': 'white',
-    'shape': ft.RoundedRectangleBorder(radius=5)
+Button_close: dict = {
+    'color': "white",
+    'bgcolor': "#373E49",
+    'side': ft.BorderSide(2, "#1D1F25"),
+    'shape': ft.RoundedRectangleBorder(radius=10),
+}
+
+Button_navBar: dict = {
+    'color': "white",
+    'bgcolor': "#373E49",
+    'side': ft.BorderSide(2, "#1D1F25"),
+    'shape': ft.RoundedRectangleBorder(radius=0),
 }
