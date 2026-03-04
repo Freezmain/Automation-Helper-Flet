@@ -1,24 +1,15 @@
 import flet as ft
 
-from components.nav_bar import NavBar
+from views.base_view import BaseView
 
-class View_home():
+class View_home(BaseView):
     def __init__(self, page: ft.Page):
-        self.navBar = NavBar(page)
-        
-    def Get_HomeView(self):
-        return ft.View(
-            route="/",
-            controls=[
-                #----Шари відображення----
-                ft.Stack(
-                    controls=[
-                        ft.Container(
-                            ft.Text("Home")
-                        ),
-                        self.navBar.Get_NavBar(),
-                    ]
-                )
-            ],
-            padding = 0
-        )
+        super().__init__(page, route="/")
+
+    def get_content(self):
+        return [
+            ft.Container(
+                content=ft.Text("Home"),
+                padding=20
+            )
+        ]

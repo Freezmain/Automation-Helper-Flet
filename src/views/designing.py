@@ -1,24 +1,15 @@
 import flet as ft
 
-from components.nav_bar import NavBar
+from views.base_view import BaseView
 
-class View_designing():
+class View_designing(BaseView):
     def __init__(self, page: ft.Page):
-        self.navBar = NavBar(page)
-    
-    def Get_DesigningView(self):
-        return ft.View(
-            route="/designing",
-            controls=[
-                #----Шари відображення----
-                ft.Stack(
-                    controls=[
-                        ft.Container(
-                            ft.Text("Designing")
-                        ),
-                        self.navBar.Get_NavBar(),
-                    ]
-                )
-            ],
-            padding = 0
-        )
+        super().__init__(page, route="/designing")
+
+    def get_content(self):
+        return [
+            ft.Container(
+                content=ft.Text("Designing"),
+                padding=20
+            )
+        ]

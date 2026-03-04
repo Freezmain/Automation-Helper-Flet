@@ -1,56 +1,65 @@
 import flet as ft
 
 from components.buttons import *
+from components.texts import *
 from utils.style import *
 
 class NavBar:
-    def __init__(self, page: ft.Page):
+    def __init__(self, page: ft.Page, style: dict):
         self.page = page
         self.navBar = ft.Container(
             ft.Column(
                 controls=[
-                    ft.Row(
-                        controls=[
-                            ft.Text(value="Навігаційне меню"),
-                            IconButton(ft.Icons.CLOSE, Button_close, self.toggle_visible),
-                        ],
-                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                        
+                    ft.Container(
+                        content = ft.Row(
+                            controls=[
+                                IconButton_Close(ft.Icons.CLOSE, Button_close_style, self.toggle_visible),
+                            ],
+                            alignment=ft.MainAxisAlignment.END,
+                        ),
+                        padding = ft.padding.only(right = style.get('padding-right')),
                     ),
                     ft.Column(
                         controls=[
-                            Button("Головна", ft.Icons.HOME_ROUNDED, Button_navBar, self.open_home),
-                            Button("Розрахунок", ft.Icons.CALCULATE_ROUNDED, Button_navBar, self.open_calculation),
-                            Button("Проєктування", ft.Icons.ARCHITECTURE, Button_navBar, self.open_designing),
-                            Button("Інсталяція", ft.Icons.BUILD_ROUNDED, Button_navBar, self.open_installation),
-                            Button("Налаштування", ft.Icons.SETTINGS_ROUNDED, Button_navBar, self.open_settings),
+                            Button_NavBar("Головна", ft.Icons.HOME_ROUNDED, Button_navBar_style, self.open_home),
+                            Button_NavBar("Розрахунок", ft.Icons.CALCULATE_ROUNDED, Button_navBar_style, self.open_calculation),
+                            Button_NavBar("Проєктування", ft.Icons.ARCHITECTURE, Button_navBar_style, self.open_designing),
+                            Button_NavBar("Інсталяція", ft.Icons.BUILD_ROUNDED, Button_navBar_style, self.open_installation),
+                            Button_NavBar("Налаштування", ft.Icons.SETTINGS_ROUNDED, Button_navBar_style, self.open_settings),
                         ],
-                        spacing = 1
+                        spacing = style.get('spacing'),
                     )
                 ],
-                height = navBarHeight,
-                width = navBarWidth,
             ),
-            bgcolor = navBarBgColor,
+            height = style.get('height'),
+            width = style.get('width'),
+            bgcolor = style.get('bgcolor'),
+            padding = style.get('padding'),
+            visible = False
         )
 
-    def toggle_visible(self, e):
+    def toggle_visible(self, e = None):
         self.navBar.visible = not self.navBar.visible
     
     async def open_home(self, e):
         await self.page.push_route("/")
+        self.toggle_visible()
 
     async def open_calculation(self, e):
         await self.page.push_route("/calculation")
+        self.toggle_visible()
     
     async def open_designing(self, e):
         await self.page.push_route("/designing")
+        self.toggle_visible()
         
     async def open_installation(self, e):
         await self.page.push_route("/installation")
+        self.toggle_visible()
     
     async def open_settings(self, e):
         await self.page.push_route("/settings")
+        self.toggle_visible()
     
     def Get_NavBar(self):
         return self.navBar

@@ -1,39 +1,21 @@
 import flet as ft
 
-from components.nav_bar import NavBar
+from views.base_view import BaseView
+from components.buttons import *
 
-class View_calculation():
+class View_calculation(BaseView):
     def __init__(self, page: ft.Page):
-        self.navBar = NavBar(page)
+        super().__init__(page, route="/calculation")
 
-    def Get_CalculationView(self):
-        return ft.View(
-            route="/calculation",
-            controls=[
-                #----Шари відображення----
-                ft.Stack(
-                    controls=[
-                        ft.Column(
-                            controls=[
-                                ft.Row(
-                                    controls=[
-                                        ft.IconButton(icon=ft.Icons.MENU),
-                                        ft.Text(value="SVIT Helper")
-                                    ]  
-                                ),
-                                ft.Row(
-                                    controls=[
-                                        ft.Button(icon=ft.Icons.LIGHTBULB_OUTLINE, content="Світло"),
-                                        ft.Button(icon=ft.Icons.LIGHTBULB_OUTLINE, content="Механізми"),
-                                        ft.Button(icon=ft.Icons.LIGHTBULB_OUTLINE, content="Датчики"),
-                                        ft.Button(icon=ft.Icons.LIGHTBULB_OUTLINE, content="Клавіші")
-                                    ]
-                                )
-                            ]
-                        ),
-                        self.navBar.Get_NavBar(),
-                    ]
-                )
-            ],
-            padding = 0
-        )
+    def get_content(self):
+        return [
+            ft.Row(
+                controls=[
+                    Button_CalculationBar("Світло", ft.Icons.LIGHTBULB_OUTLINE, Button_calculationBar_style),
+                    Button_CalculationBar("Клімат", ft.Icons.LIGHTBULB_OUTLINE, Button_calculationBar_style),
+                    Button_CalculationBar("Керування", ft.Icons.LIGHTBULB_OUTLINE, Button_calculationBar_style),
+                    Button_CalculationBar("Інше", ft.Icons.LIGHTBULB_OUTLINE, Button_calculationBar_style)
+                ],
+                alignment = ft.MainAxisAlignment.CENTER,
+            )
+        ]

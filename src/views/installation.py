@@ -1,24 +1,15 @@
 import flet as ft
 
-from components.nav_bar import NavBar
+from views.base_view import BaseView
 
-class View_installation():
+class View_installation(BaseView):
     def __init__(self, page: ft.Page):
-        self.navBar = NavBar(page)
-    
-    def Get_InstallationView(self):
-        return ft.View(
-            route="/installation",
-            controls=[
-                #----Шари відображення----
-                ft.Stack(
-                    controls=[
-                        ft.Container(
-                            ft.Text("Installation")
-                        ),
-                        self.navBar.Get_NavBar(),
-                    ]
-                )
-            ],
-            padding = 0
-        )
+        super().__init__(page, route="/installation")
+
+    def get_content(self):
+        return [
+            ft.Container(
+                content=ft.Text("Installation"),
+                padding=20
+            )
+        ]
