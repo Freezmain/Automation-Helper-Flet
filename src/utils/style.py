@@ -6,26 +6,6 @@ Page_style: dict = {
     'width': 576,
 }
 
-TextTitle_style: dict = {
-    'color': '#FFFFFF',
-    'size': 17,
-    'weight': ft.FontWeight.W_600,
-}
-
-TextSubTitle_style: dict = {
-    'color': '#FFFFFF',
-    'size': 25,
-    'weight': ft.FontWeight.W_400
-}
-
-Button_close_style: dict = {
-    'bgcolor': "#373E49",
-    'shape': ft.RoundedRectangleBorder(radius=0),
-    'height': 30,
-    'width': 30,
-    'icon_size': 15,
-}
-
 NavBar_style: dict = {
     'bgcolor': "#373E49",
     'height': 1280,
@@ -36,9 +16,34 @@ NavBar_style: dict = {
     'padding-right': 2,
 }
 
+TextTitle_style: dict = {
+    'color': '#FFFFFF',
+    'size': 20,
+    'weight': ft.FontWeight.W_600,
+}
+
+TextSubTitle_style: dict = {
+    'color': '#FFFFFF',
+    'size': 17,
+    'weight': ft.FontWeight.W_600
+}
+
+Button_style = ft.ButtonStyle(
+    color = "#80BCE4",
+    shape = ft.RoundedRectangleBorder(radius=15),
+    icon_size = 25,
+)
+
+Button_close_style: dict = {
+    'bgcolor': ft.Colors.TRANSPARENT,
+    'shape': ft.RoundedRectangleBorder(radius=0),
+    'height': 40,
+    'width': 40,
+    'icon_size': 20,
+}
+
 Button_navBar_style: dict = {
     'shape': ft.RoundedRectangleBorder(radius=0),
-    'alignment': ft.MainAxisAlignment.START,
     'color': "#FFFFFF",
     'bgcolor': "#373E49",
     'height': 60,
@@ -48,14 +53,4 @@ Button_navBar_style: dict = {
     'text_size': 15,
     'spacing': 10,
     'padding-left': 0,
-}
-
-Button_calculationBar_style: dict = {
-    'shape': ft.RoundedRectangleBorder(radius=15),
-    'alignment': ft.MainAxisAlignment.START,
-    'color': "#80BCE4",
-    'height': 30,
-    'width': 120,
-    'icon_size': 20,
-    'text_size': 13,
 }

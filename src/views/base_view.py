@@ -27,11 +27,11 @@ class BaseView:
                                     ft.Row(
                                         controls=[
                                             ft.IconButton(icon=ft.Icons.MENU, on_click = self.navBar.toggle_visible),
-                                            Text_Title("SVIT Helper", TextTitle_style)
-                                        ],
+                                            Text("SVIT Helper", TextTitle_style)
+                                        ]
                                     ),
                                     *self.get_content(),
-                                ],
+                                ]
                             ),
                             padding = 20
                         ),
