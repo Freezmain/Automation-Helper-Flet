@@ -7,12 +7,34 @@ from components.buttons import *
 class Light_list:
     def __init__(self, page):
         self.page = page
-        self.light_list = ft.Column(
-            controls = self.take_lights("Light"),
+        self.light_list = self.take_elements_list("Light")
+        self.climate_list = self.take_elements_list("Climate")
+        self.drive_list = self.take_elements_list("Drive")
+        self.sensor_list = self.take_elements_list("Sensor")
+        self.key_list = self.take_elements_list("Key")
+        self.other_list = self.take_elements_list("Other")
+    
+    def take_elements_list(self, element):
+        return ft.Column(
+            controls = self.take_elements(element),
             spacing = 5,
             scroll=ft.ScrollMode.AUTO,
             visible = False,
         )
+    
+    def take_elements(self, category_name):
+        lights_catalog = CATALOG_ELEMENTS[category_name]
+        lights_buttons = []
+        
+        for l in lights_catalog:
+            button = ft.Button(
+                content = l['name'],
+                data = l,
+                on_click = self.open_details,
+            )
+            lights_buttons.append(button)
+        
+        return lights_buttons
     
     def open_details(self, e):
         element_data = e.control.data
@@ -45,27 +67,28 @@ class Light_list:
         self.page.overlay.append(modal_details)
         modal_details.open = True
         self.page.update()
-    
-    def take_lights(self, category_name):
-        lights_catalog = CATALOG_ELEMENTS[category_name]
-        lights_buttons = []
-        
-        for l in lights_catalog:
-            button = ft.Button(
-                content = l['name'],
-                data = l,
-                on_click = self.open_details,
-            )
-            lights_buttons.append(button)
-        
-        return lights_buttons
 
     def close_modal_details(self, modal):
         modal.open = False
         self.page.update()
     
-    def toggle_vision(self, e = None):
-        self.light_list.visible = not self.light_list.visible
+    def toggle_vision(self, category_element):
+        target_list = self.get_elements(category_element)
+        
+        if target_list:
+            target_list.visible = not target_list.visible
+            self.page.update()
     
-    def get_lights(self):
-        return self.light_list
+    def get_elements(self, element):
+        if element == "Light":
+            return self.light_list
+        elif element == "Climate":
+            return self.climate_list
+        elif element == "Drive":
+            return self.drive_list
+        elif element == "Sensor":
+            return self.sensor_list
+        elif element == "Key":
+            return self.key_list
+        else:
+            return self.other_list

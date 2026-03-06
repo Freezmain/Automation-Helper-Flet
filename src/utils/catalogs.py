@@ -41,8 +41,8 @@ CATALOG_ELEMENTS = {
         {"name": "Восьмиклавішний", "base_type_input": "DI", "base_count_input": 8},
     ],
     "Other": [
-        {"name:": "Рушникосушка", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
-        {"name:": "Насос", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Рушникосушка", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Насос", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
     ]
 }
 
