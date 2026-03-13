@@ -45,3 +45,42 @@ def Button_NavBar(text: str, icon: ft.Icon, style: dict, function: Callable):
         width = style.get('width'),
         on_click = function,
     )
+
+def Button_modal_add_element(text: str, icon: ft.Icon, style: dict, function: Callable):
+    return ft.Button(
+        content = ft.Container(
+            ft.Row(
+                controls = [
+                    ft.Icon(icon = icon, size = style.get('icon_size')),
+                    ft.Text(value = text, size = style.get('text_size')),
+                ],
+                spacing = style.get('spacing'),
+            ),
+            width = style.get('width'),
+        ),
+        bgcolor = style.get('bgcolor'),
+        color = style.get('color'),
+        elevation = style.get('elevation'),
+        height = style.get('height'),
+        on_click = function,
+    )
+
+def Button_modal_add_element_item(text: str, icon: ft.Icon, style: dict, data, function: Callable):
+    return ft.Button(
+        content = ft.Container(
+            ft.Row(
+                controls = [
+                    ft.Icon(icon = icon, size = style.get('icon_size')),
+                    ft.Text(value = text, size = style.get('text_size')),
+                ],
+                spacing = style.get('spacing'),
+            ),
+            width = style.get('width'),
+        ),
+        data = data,
+        bgcolor = style.get('bgcolor'),
+        color = style.get('color'),
+        elevation = style.get('elevation'),
+        height = style.get('height'),
+        on_click = function
+    )

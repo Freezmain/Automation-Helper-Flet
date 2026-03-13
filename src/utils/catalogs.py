@@ -1,14 +1,14 @@
 CATALOG_ELEMENTS = {
     "Light": [
-        {"name": "Лампа", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
-        {"name": "Люстра", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
-        {"name": "Точка", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
-        {"name": "Торшер", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
-        {"name": "Бра", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
-        {"name": "LED", "base_type_output": "PWM", "base_count_output": 1, "base_voltage": "24V"},
-        {"name": "RGB", "base_type_output": "PWM", "base_count_output": 3, "base_voltage": "24V"},
-        {"name": "RGBW", "base_type_output": "PWM", "base_count_output": 4, "base_voltage": "24V"},
-        {"name": "Трек", "base_type_output": "DALI", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Лампа", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Люстра", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Точка", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Торшер", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "Бра", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},
+        {"name": "LED", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "PWM", "base_count_output": 1, "base_voltage": "24V"},
+        {"name": "RGB", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "PWM", "base_count_output": 3, "base_voltage": "24V"},
+        {"name": "RGBW", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "PWM", "base_count_output": 4, "base_voltage": "24V"},
+        {"name": "Трек", "icon": "ft.Icons.LIGHTBULB_ROUNDED", "base_type_output": "DALI", "base_count_output": 1, "base_voltage": "220V"},
     ],
     "Climate": [
         {"name": "Тепла підлога", "base_type_output": "DO", "base_count_output": 1, "base_voltage": "220V"},

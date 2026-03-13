@@ -54,3 +54,25 @@ Button_navBar_style: dict = {
     'spacing': 10,
     'padding-left': 0,
 }
+
+Button_modal_add_element_style: dict = {
+    'color': "#FFFFFF",
+    'bgcolor': "#373E49",
+    'height': 40,
+    'width': 310,
+    'elevation': 0,
+    'icon_size': 25,
+    'text_size': 15,
+    'spacing': 10
+}
+
+Button_modal_add_element_style_item: dict = {
+    'color': "#FFFFFF",
+    'bgcolor': "#31373D",
+    'height': 30,
+    'width': 310,
+    'elevation': 0,
+    'icon_size': 22,
+    'text_size': 13,
+    'spacing': 10
+}

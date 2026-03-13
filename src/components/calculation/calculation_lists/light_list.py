@@ -27,10 +27,12 @@ class Light_list:
         lights_buttons = []
         
         for l in lights_catalog:
-            button = ft.Button(
-                content = l['name'],
-                data = l,
-                on_click = self.open_details,
+            button = Button_modal_add_element_item(
+                l['name'],
+                l['icon'],
+                Button_modal_add_element_style_item,
+                l,
+                self.open_details
             )
             lights_buttons.append(button)
         
