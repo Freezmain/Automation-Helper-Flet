@@ -2,6 +2,7 @@ import flet as ft
 
 from views.base_view import BaseView
 
+# ПРОЦЕС ПІДКЛЮЧЕННЯ
 class View_installation(BaseView):
     def __init__(self, page: ft.Page):
         super().__init__(page, route="/installation")

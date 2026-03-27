@@ -4,6 +4,7 @@ from utils.style import *
 from utils.catalogs import *
 from components.buttons import *
 
+# ОТРИМАННЯ СПИСКІВ ЕЛЕМЕНТІВ
 class Light_list:
     def __init__(self, page):
         self.page = page
@@ -14,6 +15,7 @@ class Light_list:
         self.key_list = self.take_elements_list("Key")
         self.other_list = self.take_elements_list("Other")
     
+    # Повернення списку відповідного елементу
     def take_elements_list(self, element):
         return ft.Column(
             controls = self.take_elements(element),
@@ -22,6 +24,7 @@ class Light_list:
             visible = False,
         )
     
+    # Отримання списку кнопок з інформацією про пристрої відповідної категорії
     def take_elements(self, category_name):
         lights_catalog = CATALOG_ELEMENTS[category_name]
         lights_buttons = []
@@ -38,6 +41,7 @@ class Light_list:
         
         return lights_buttons
     
+    # Відкриття модального вікна з відомостями про пристрій
     def open_details(self, e):
         element_data = e.control.data
 
@@ -70,10 +74,12 @@ class Light_list:
         modal_details.open = True
         self.page.update()
 
+    # Закриття модального вікна з відомостями при пристрої
     def close_modal_details(self, modal):
         modal.open = False
         self.page.update()
     
+    # Перемикання видимості списку пристроїв
     def toggle_vision(self, category_element):
         target_list = self.get_elements(category_element)
         
@@ -81,6 +87,7 @@ class Light_list:
             target_list.visible = not target_list.visible
             self.page.update()
     
+    # Повернення списку кнопок з відомостями про пристрої відповідної категорії
     def get_elements(self, element):
         if element == "Light":
             return self.light_list

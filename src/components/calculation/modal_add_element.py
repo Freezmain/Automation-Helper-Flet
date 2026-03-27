@@ -7,6 +7,7 @@ from components.buttons import *
 from components.texts import *
 from components.calculation.calculation_lists.light_list import Light_list
 
+# МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ПРИСТРОЇВ
 class Modal_add_element:
     def __init__(self, page):
         self.page = page
@@ -17,17 +18,19 @@ class Modal_add_element:
                 content = (
                     ft.Column(
                         controls = [
+                            # Header модального вікна додавання пристроїв
                             ft.Row(
                                 controls = [
                                     IconButton_Close(ft.Icons.CLOSE, Button_close_style, self.toggle_visible),
                                 ],
                                 alignment=ft.MainAxisAlignment.END,
                             ),
+                            # Список пристроїв
                             TextCenter("Оберіть елементи", TextSubTitle_style),
                             ft.Container(height = 10),
                             Button_modal_add_element("Світло", ft.Icons.LIGHTBULB_ROUNDED, Button_modal_add_element_style, function = lambda _: self.light_list.toggle_vision("Light")),
                             self.light_list.get_elements("Light"),
-                            Button_modal_add_element("Клімат",, Button_modal_add_element_style, function = lambda _: self.light_list.toggle_vision("Climate")),
+                            Button_modal_add_element("Клімат", ft.Icons.KEYBOARD_ARROW_RIGHT, Button_modal_add_element_style, function = lambda _: self.light_list.toggle_vision("Climate")),
                             self.light_list.get_elements("Climate"),
                             Button_modal_add_element("Привода", ft.Icons.KEYBOARD_ARROW_RIGHT, Button_modal_add_element_style, function = lambda _: self.light_list.toggle_vision("Drive")),
                             self.light_list.get_elements("Drive"),
@@ -46,8 +49,10 @@ class Modal_add_element:
             )
         )
     
+    # Перемикання видимості модального вікна
     def toggle_visible(self):
         self.modal_add_element.open = not self.modal_add_element.open
-        
+    
+    # Повернення модального вікна
     def get_modal(self):
         return self.modal_add_element

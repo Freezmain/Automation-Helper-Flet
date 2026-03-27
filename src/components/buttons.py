@@ -1,6 +1,7 @@
 from utils.style import *
 from typing import Callable
 
+# Кнопка звичайна
 def Button(text: str, icon: ft.Icon, style: ft.ButtonStyle, function: Callable):
     return ft.Button(
         content = text,
@@ -9,6 +10,7 @@ def Button(text: str, icon: ft.Icon, style: ft.ButtonStyle, function: Callable):
         on_click = function,
     )
 
+# Кнопка закриття
 def IconButton_Close(icon: ft.Icon, style: dict, function: Callable):
     return ft.IconButton(
         style = ft.ButtonStyle(
@@ -23,6 +25,7 @@ def IconButton_Close(icon: ft.Icon, style: dict, function: Callable):
         on_click = function,
         )
 
+# Кнопка переходу на сторінку (НАВІГАЦІЙНЕ МЕНЮ)
 def Button_NavBar(text: str, icon: ft.Icon, style: dict, function: Callable):
     return ft.Button(
         content = ft.Container(
@@ -46,6 +49,7 @@ def Button_NavBar(text: str, icon: ft.Icon, style: dict, function: Callable):
         on_click = function,
     )
 
+# Кнопка показу доступних пристроїв проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
 def Button_modal_add_element(text: str, icon: ft.Icon, style: dict, function: Callable):
     return ft.Button(
         content = ft.Container(
@@ -65,6 +69,7 @@ def Button_modal_add_element(text: str, icon: ft.Icon, style: dict, function: Ca
         on_click = function,
     )
 
+# Кнопка показу інформації про пристрій проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
 def Button_modal_add_element_item(text: str, icon: ft.Icon, style: dict, data, function: Callable):
     return ft.Button(
         content = ft.Container(

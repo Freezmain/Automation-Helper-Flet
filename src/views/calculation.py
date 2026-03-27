@@ -4,6 +4,7 @@ from views.base_view import BaseView
 from components.calculation.modal_add_element import Modal_add_element
 from components.buttons import *
 
+# РОЗРАХУНОК КІЛЬКОСТІ МОДУЛІВ
 class View_calculation(BaseView):
     def __init__(self, page: ft.Page):
         super().__init__(page, route="/calculation")
@@ -11,6 +12,7 @@ class View_calculation(BaseView):
     
     def get_content(self):
         return [
+            # Додавання пристроїв проєкту
             ft.Container(
                 content = ft.Row(
                     controls=[
@@ -20,6 +22,7 @@ class View_calculation(BaseView):
                 ),
                 padding = ft.Padding(left = 20),
             ),
+            # Модальне вікно додавання пристроїв
             ft.Container(
                 content = self.modal_add_element.get_modal(),
             )

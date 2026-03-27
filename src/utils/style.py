@@ -1,11 +1,13 @@
 import flet as ft
 
+# Стиль додатку
 Page_style: dict = {
     'bgcolor': "#2C3440",
     'height': 1024,
     'width': 576,
 }
 
+# Стиль навігаційного меню
 NavBar_style: dict = {
     'bgcolor': "#373E49",
     'height': 1280,
@@ -16,24 +18,28 @@ NavBar_style: dict = {
     'padding-right': 2,
 }
 
+# Стиль заголовку
 TextTitle_style: dict = {
     'color': '#FFFFFF',
     'size': 20,
     'weight': ft.FontWeight.W_600,
 }
 
+# Стиль підзаголовку
 TextSubTitle_style: dict = {
     'color': '#FFFFFF',
     'size': 17,
     'weight': ft.FontWeight.W_600
 }
 
+# Стиль кнопки
 Button_style = ft.ButtonStyle(
     color = "#80BCE4",
     shape = ft.RoundedRectangleBorder(radius=15),
     icon_size = 25,
 )
 
+# Стиль кнопки закриття
 Button_close_style: dict = {
     'bgcolor': ft.Colors.TRANSPARENT,
     'shape': ft.RoundedRectangleBorder(radius=0),
@@ -42,6 +48,7 @@ Button_close_style: dict = {
     'icon_size': 20,
 }
 
+# Стиль кнопки переходу на сторінку (НАВІГАЦІЙНЕ МЕНЮ)
 Button_navBar_style: dict = {
     'shape': ft.RoundedRectangleBorder(radius=0),
     'color': "#FFFFFF",
@@ -55,6 +62,7 @@ Button_navBar_style: dict = {
     'padding-left': 0,
 }
 
+# Стиль кнопки показу доступних пристроїв проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
 Button_modal_add_element_style: dict = {
     'color': "#FFFFFF",
     'bgcolor': "#373E49",
@@ -66,11 +74,12 @@ Button_modal_add_element_style: dict = {
     'spacing': 10
 }
 
+# Стиль кнопки показу інформації про пристрій проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
 Button_modal_add_element_style_item: dict = {
     'color': "#FFFFFF",
     'bgcolor': "#31373D",
     'height': 30,
-    'width': 310,
+    'width': 100,
     'elevation': 0,
     'icon_size': 22,
     'text_size': 13,
