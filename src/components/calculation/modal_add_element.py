@@ -24,44 +24,49 @@ class Modal_add_element:
                             ],
                             alignment=ft.MainAxisAlignment.END,
                         ),
-                        # Список пристроїв
-                        TextCenter("Оберіть елементи", TextSubTitle_style),
-                        ft.Container(height = 10),
-                        ft.ExpansionTile(
-                            title = "Світло",
-                            leading = ft.Icons.LIGHTBULB_ROUNDED,
-                            controls = self.light_list.get_elements("Light"),
-                        ),
-                        ft.ExpansionTile(
-                            title = "Клімат",
-                            leading = ft.Icons.LIGHTBULB_ROUNDED,
-                            controls = self.light_list.get_elements("Climate"),
-                        ),
-                        ft.ExpansionTile(
-                            title = "Приводи",
-                            leading = ft.Icons.LIGHTBULB_ROUNDED,
-                            controls = self.light_list.get_elements("Drive"),
-                        ),
-                        ft.ExpansionTile(
-                            title = "Датчики",
-                            leading = ft.Icons.LIGHTBULB_ROUNDED,
-                            controls = self.light_list.get_elements("Sensor"),
-                        ),
-                        ft.ExpansionTile(
-                            title = "Вимикачі",
-                            leading = ft.Icons.LIGHTBULB_ROUNDED,
-                            controls = self.light_list.get_elements("Key"),
-                        ),
-                        ft.ExpansionTile(
-                            title = "Інше",
-                            leading = ft.Icons.LIGHTBULB_ROUNDED,
-                            controls = self.light_list.get_elements("Other"),
-                        ),
+                        # Головна частина модального вікна
+                        ft.Column(
+                            controls = [
+                                TextCenter("Оберіть елементи", TextSubTitle_style),
+                                ft.Container(height = 10),
+                                ft.ExpansionTile(
+                                    title = "Світло",
+                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
+                                    controls = self.light_list.get_elements("Light"),
+                                ),
+                                ft.ExpansionTile(
+                                    title = "Клімат",
+                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
+                                    controls = self.light_list.get_elements("Climate"),
+                                ),
+                                ft.ExpansionTile(
+                                    title = "Приводи",
+                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
+                                    controls = self.light_list.get_elements("Drive"),
+                                ),
+                                ft.ExpansionTile(
+                                    title = "Датчики",
+                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
+                                    controls = self.light_list.get_elements("Sensor"),
+                                ),
+                                ft.ExpansionTile(
+                                    title = "Вимикачі",
+                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
+                                    controls = self.light_list.get_elements("Key"),
+                                ),
+                                ft.ExpansionTile(
+                                    title = "Інше",
+                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
+                                    controls = self.light_list.get_elements("Other"),
+                                ),
+                            ],
+                            width = 380,
+                            height = 500,
+                            scroll = ft.ScrollMode.ADAPTIVE,
+                            tight = True,
+                        )
                     ],
-                    width = 380,
-                    height = 500,
-                    scroll = ft.ScrollMode.ADAPTIVE,
-                    tight = True,
+                    tight = True
                 )
             )
         )
