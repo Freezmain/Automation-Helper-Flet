@@ -73,15 +73,3 @@ Button_modal_add_element_style: dict = {
     'text_size': 15,
     'spacing': 10
 }
-
-# Стиль кнопки показу інформації про пристрій проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
-Button_modal_add_element_style_item: dict = {
-    'color': "#FFFFFF",
-    'bgcolor': "#31373D",
-    'height': 30,
-    'width': 100,
-    'elevation': 0,
-    'icon_size': 22,
-    'text_size': 13,
-    'spacing': 10
-}

@@ -8,21 +8,12 @@ from components.buttons import *
 class Light_list:
     def __init__(self, page):
         self.page = page
-        self.light_list = self.take_elements_list("Light")
-        self.climate_list = self.take_elements_list("Climate")
-        self.drive_list = self.take_elements_list("Drive")
-        self.sensor_list = self.take_elements_list("Sensor")
-        self.key_list = self.take_elements_list("Key")
-        self.other_list = self.take_elements_list("Other")
-    
-    # Повернення списку відповідного елементу
-    def take_elements_list(self, element):
-        return ft.Column(
-            controls = self.take_elements(element),
-            spacing = 5,
-            scroll=ft.ScrollMode.AUTO,
-            visible = False,
-        )
+        self.light_list = self.take_elements("Light")
+        self.climate_list = self.take_elements("Climate")
+        self.drive_list = self.take_elements("Drive")
+        self.sensor_list = self.take_elements("Sensor")
+        self.key_list = self.take_elements("Key")
+        self.other_list = self.take_elements("Other")
     
     # Отримання списку кнопок з інформацією про пристрої відповідної категорії
     def take_elements(self, category_name):
@@ -33,7 +24,6 @@ class Light_list:
             button = Button_modal_add_element_item(
                 l['name'],
                 l['icon'],
-                Button_modal_add_element_style_item,
                 l,
                 self.open_details
             )
@@ -78,14 +68,6 @@ class Light_list:
     def close_modal_details(self, modal):
         modal.open = False
         self.page.update()
-    
-    # Перемикання видимості списку пристроїв
-    def toggle_vision(self, category_element):
-        target_list = self.get_elements(category_element)
-        
-        if target_list:
-            target_list.visible = not target_list.visible
-            self.page.update()
     
     # Повернення списку кнопок з відомостями про пристрої відповідної категорії
     def get_elements(self, element):

@@ -70,22 +70,16 @@ def Button_modal_add_element(text: str, icon: ft.Icon, style: dict, function: Ca
     )
 
 # Кнопка показу інформації про пристрій проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
-def Button_modal_add_element_item(text: str, icon: ft.Icon, style: dict, data, function: Callable):
+def Button_modal_add_element_item(text: str, icon: ft.Icon, data, function: Callable):
     return ft.Button(
         content = ft.Container(
             ft.Row(
                 controls = [
-                    ft.Icon(icon = icon, size = style.get('icon_size')),
-                    ft.Text(value = text, size = style.get('text_size')),
+                    ft.Icon(icon = icon),
+                    ft.Text(value = text),
                 ],
-                spacing = style.get('spacing'),
             ),
-            width = style.get('width'),
         ),
         data = data,
-        bgcolor = style.get('bgcolor'),
-        color = style.get('color'),
-        elevation = style.get('elevation'),
-        height = style.get('height'),
         on_click = function
     )
