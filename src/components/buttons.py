@@ -69,6 +69,25 @@ def Button_modal_add_element(text: str, icon: ft.Icon, style: dict, function: Ca
         on_click = function,
     )
 
+def Button_modal_dropdown(title: str, icon: ft.Icon, elements):
+    return ft.Container(
+        bgcolor = "#212427",
+        content = (
+            ft.ExpansionTile(
+                title = title,
+                leading = icon,
+                bgcolor = "#25282C",
+                controls_padding = 4,
+                controls = [
+                    ft.Column(
+                        controls = elements,
+                        spacing = 4,
+                    ),
+                ]
+            )
+        ),
+    ),
+
 # Кнопка показу інформації про пристрій проєкту (МОДАЛЬНЕ ВІКНО ДОДАВАННЯ ЕЛЕМЕНТІВ)
 def Button_modal_add_element_item(text: str, icon: ft.Icon, data, function: Callable):
     return ft.Button(

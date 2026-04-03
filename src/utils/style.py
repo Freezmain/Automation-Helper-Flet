@@ -2,14 +2,13 @@ import flet as ft
 
 # Стиль додатку
 Page_style: dict = {
-    'bgcolor': "#2C3440",
     'height': 1024,
     'width': 576,
 }
 
 # Стиль навігаційного меню
 NavBar_style: dict = {
-    'bgcolor': "#373E49",
+    'bgcolor': "#272A2F",
     'height': 1280,
     'width': 210,
     'padding-left': 10,
@@ -52,7 +51,7 @@ Button_close_style: dict = {
 Button_navBar_style: dict = {
     'shape': ft.RoundedRectangleBorder(radius=0),
     'color': "#FFFFFF",
-    'bgcolor': "#373E49",
+    'bgcolor': "#272A2F",
     'height': 60,
     'weight': 200,
     'elevation': 0,

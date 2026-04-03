@@ -1,6 +1,5 @@
 import flet as ft
 
-from assets.icons import *
 from utils.style import *
 from utils.catalogs import *
 from components.buttons import *
@@ -29,11 +28,7 @@ class Modal_add_element:
                             controls = [
                                 TextCenter("Оберіть елементи", TextSubTitle_style),
                                 ft.Container(height = 10),
-                                ft.ExpansionTile(
-                                    title = "Світло",
-                                    leading = ft.Icons.LIGHTBULB_ROUNDED,
-                                    controls = self.light_list.get_elements("Light"),
-                                ),
+                                Button_modal_dropdown("Світло", ft.Icons.LIGHTBULB_ROUNDED, self.light_list.get_elements("Light")),
                                 ft.ExpansionTile(
                                     title = "Клімат",
                                     leading = ft.Icons.LIGHTBULB_ROUNDED,
